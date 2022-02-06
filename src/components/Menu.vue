@@ -1,56 +1,58 @@
 <template>
-  <div>
-    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-      <el-radio-button :label="false">展开</el-radio-button>
-      <el-radio-button :label="true">收起</el-radio-button>
-    </el-radio-group>
-    <el-menu
-      default-active="1-4-1"
-      class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose"
-      :collapse="isCollapse"
+  <el-menu
+    default-active="home"
+    class="el-menu-vertical-demo"
+    @open="handleOpen"
+    @close="handleClose"
+    :collapse="isCollapse"
+    text-color="#fff"
+    active-text-color="#ffd04b"
+    background-color="#212735"
+    router
+  >
+    <div
+      @click="toggleCollapse"
+      class="toggle-button"
+      @mouseover="isTextShow = true"
+      @mouseleave="isTextShow = false"
     >
-      <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span slot="title">导航一</span>
-        </template>
-        <el-menu-item-group>
-          <span slot="title">分组一</span>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <span slot="title">选项4</span>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
+      <!-- <i class="text" v-if="isTextShow">
+          {{ isCollapse ? "展开" : "收起" }}
+        </i> -->
+      <i :class="isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'"> </i>
+    </div>
+    <el-menu-item index="home">
+      <i class="el-icon-data-line"></i>
+      <span slot="title">监控信息</span>
+    </el-menu-item>
+    <el-menu-item index="control">
+      <i class="el-icon-menu"></i>
+      <span slot="title">摄像头控制</span>
+    </el-menu-item>
+    <!-- <el-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
         <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
-    </el-menu>
-  </div>
+      </el-menu-item> -->
+    <el-menu-item index="settings">
+      <i class="el-icon-setting"></i>
+      <span slot="title">设置</span>
+    </el-menu-item>
+  </el-menu>
 </template>
 
 <script>
 export default {
   name: "NavMenu",
+  props: {
+    // isCollapse: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+  },
   data() {
     return {
       isCollapse: true,
+      isTextShow: false,
     };
   },
   methods: {
@@ -60,6 +62,9 @@ export default {
     handleClose(key, keyPath) {
       console.log(key, keyPath);
     },
+    toggleCollapse() {
+      this.isCollapse = !this.isCollapse;
+    },
   },
 };
 </script>
@@ -67,6 +72,37 @@ export default {
 <style lang="less" scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 400px;
 }
+.toggle-button {
+  line-height: 60px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  font-size: 24px;
+  background-color: #31394c;
+  font-weight: normal;
+
+  border-color: #40485f;
+  // border-width: 2px;
+  // border-style: solid;
+  // border-top: none;
+  // border-left: none;
+  .text {
+    text-decoration: none;
+    font-style: normal;
+    opacity: 0.5;
+  }
+}
+.toggle-button:hover {
+  background-color: #2c3447;
+}
+.el-menu {
+  border-right: solid;
+  height: 100%;
+  border-color: #40485f;
+}
+// .mainHeight {
+//   height: 100%;
+//   width: auto;
+// }
 </style>

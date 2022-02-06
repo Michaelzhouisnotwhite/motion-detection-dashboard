@@ -1,17 +1,9 @@
 <template>
-  <div>
-    <nav-menu></nav-menu>
-  </div>
+  <div>home</div>
 </template>
 
 <script>
-import NavMenu from "@/components/Menu.vue";
-export default {
-  name: "Home",
-  components: {
-    NavMenu,
-  },
-};
+export default {};
 </script>
 
 <style lang="less" scoped>

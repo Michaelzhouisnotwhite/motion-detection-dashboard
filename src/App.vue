@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+  <lay-out></lay-out>
 </template>
 <script>
-import NavMenu from "./components/Menu.vue";
+import LayOut from "./LayOut.vue";
 export default {
   name: "App",
   components: {
-    NavMenu,
+    LayOut,
   },
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 </style>
