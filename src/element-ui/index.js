@@ -8,6 +8,11 @@ import { Card } from "element-ui";
 import { Menu, Col, Row, Submenu, MenuItem, MenuItemGroup, RadioGroup, Radio, RadioButton } from "element-ui"
 import { Header, Container, Aside, Main } from 'element-ui';
 import { Avatar } from 'element-ui';
+import { Dropdown, DropdownItem, DropdownMenu } from 'element-ui'
+import { Switch } from 'element-ui'
+import { Option } from 'element-ui'
+import { Slider } from "element-ui";
+import { Popconfirm } from "element-ui";
 
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
 
@@ -39,6 +44,16 @@ Vue.use(Container)
 Vue.use(Main)
 
 Vue.use(Avatar)
+
+Vue.use(Dropdown)
+Vue.use(DropdownItem)
+Vue.use(DropdownMenu)
+
+Vue.use(Switch)
+Vue.use(Option)
+
+Vue.use(Slider)
+Vue.use(Popconfirm)
 
 Vue.component(CollapseTransition.name, CollapseTransition)
 

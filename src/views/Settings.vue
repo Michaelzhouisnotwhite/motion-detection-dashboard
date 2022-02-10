@@ -1,12 +1,20 @@
 <template>
-  <div>settings</div>
+  <div>
+    <video-table></video-table>
+    <cam-setting></cam-setting>
+  </div>
 </template>
 
 <script>
+import VideoTable from "../components/Settings/VideoTable.vue";
+import CamSetting from "../components/Settings/CamSetting.vue";
 export default {
   name: "Settings",
+  components: {
+    VideoTable,
+    CamSetting,
+  },
 };
 </script>
-
-<style>
+<style lang="less" scoped>
 </style>

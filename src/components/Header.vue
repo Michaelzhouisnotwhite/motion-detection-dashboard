@@ -2,12 +2,9 @@
   <div class="header">
     <div class="self-info">
       <el-avatar size="medium" shape="circle" src="#" @error="errorHandler">
-        <img
-          alt="头像"
-          src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
-        />
+        <img alt="头像" src="@/assets/unLoadedAvatar.png" />
       </el-avatar>
-      家庭成员01
+      &nbsp;用户01
     </div>
   </div>
 </template>
@@ -29,6 +26,7 @@ export default {
   // justify-content: center; /*水平居中*/
   // align-items: center; /*垂直居中*/
   cursor: pointer;
+  // box-shadow: 10px 10px 5px #888888;
 }
 .self-info {
   width: max-content;

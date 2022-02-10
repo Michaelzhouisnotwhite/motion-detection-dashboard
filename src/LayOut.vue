@@ -33,16 +33,23 @@ export default {
 
 <style lang="less" scoped>
 .el-header {
-  background-color: #31394c;
-  color: #fafafa;
+  background-color: #fdfdfd;
+  color: #181818;
   line-height: 60px;
   padding: 0;
+
+  border-style: solid;
+  border-bottom-color: #181818;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-width: 2px;
 }
 .container {
   height: 100vh;
 }
 .main {
-  background-color: #212735;
-  color: #fafafa;
+  background-color: #ffffff;
+  // color: #fafafa;
 }
 </style>
