@@ -10,7 +10,9 @@ const router = new VueRouter({
     { path: '/', redirect: '/home' },
     { path: '/home', component: Home },
     { path: '/test', component: Test },
+    // eslint-disable-next-line no-undef
     { path: '/settings', component: resolve => require(['@/views/Settings.vue'], resolve) },
+    // eslint-disable-next-line no-undef
     { path: '/control', component: resolve => require(['@/views/Control.vue'], resolve) }
   ]
 })

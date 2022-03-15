@@ -3,7 +3,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "MyHome",
+};
 </script>
 
 <style lang="less" scoped>

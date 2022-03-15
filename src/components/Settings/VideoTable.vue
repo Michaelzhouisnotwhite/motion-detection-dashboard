@@ -193,6 +193,7 @@ export default {
             type: "error",
           });
         }
+      // eslint-disable-next-line no-empty
       } catch (error) {}
     },
     cellTextClose() {

@@ -9,7 +9,7 @@
 import VideoTable from "../components/Settings/VideoTable.vue";
 import CamSetting from "../components/Settings/CamSetting.vue";
 export default {
-  name: "Settings",
+  name: "MySettings",
   components: {
     VideoTable,
     CamSetting,
