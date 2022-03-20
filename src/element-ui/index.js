@@ -1,18 +1,18 @@
-import { Table, TableColumn } from "element-ui";
-import { Dialog } from "element-ui";
-import { Button } from "element-ui";
-import { Form, FormItem } from "element-ui";
-import { Input, InputNumber } from "element-ui";
-import { Message, MessageBox } from "element-ui";
-import { Card } from "element-ui";
-import { Menu, Col, Row, Submenu, MenuItem, MenuItemGroup, RadioGroup, Radio, RadioButton } from "element-ui"
-import { Header, Container, Aside, Main } from 'element-ui';
-import { Avatar } from 'element-ui';
-import { Dropdown, DropdownItem, DropdownMenu } from 'element-ui'
-import { Switch } from 'element-ui'
-import { Option } from 'element-ui'
-import { Slider } from "element-ui";
-import { Popconfirm } from "element-ui";
+import {Table, TableColumn} from "element-ui";
+import {Dialog} from "element-ui";
+import {Button} from "element-ui";
+import {Form, FormItem} from "element-ui";
+import {Input, InputNumber} from "element-ui";
+import {Message, MessageBox} from "element-ui";
+import {Card} from "element-ui";
+import {Menu, Col, Row, Submenu, MenuItem, MenuItemGroup, RadioGroup, Radio, RadioButton} from "element-ui"
+import {Header, Container, Aside, Main} from 'element-ui';
+import {Avatar} from 'element-ui';
+import {Dropdown, DropdownItem, DropdownMenu} from 'element-ui'
+import {Switch} from 'element-ui'
+import {Option} from 'element-ui'
+import {Slider} from "element-ui";
+import {Popconfirm} from "element-ui";
 
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
 
