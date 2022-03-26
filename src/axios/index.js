@@ -1,7 +1,7 @@
 import axios from "axios";
 // 请求拦截器
 
-axios.defaults.baseURL = "/";
+axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.validateStatus = function (status) {
   return (status >= 200 && status < 300) || status === 406 || status === 301; // 默认值
 };

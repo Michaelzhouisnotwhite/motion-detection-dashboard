@@ -8,13 +8,16 @@
       size="small"
       label-position="left"
     >
-      <el-form-item label="开启检测">
+      <el-form-item label="开启摄像头" >
+        <el-switch v-model="form.isCamOn" @change="camOnChange"></el-switch>
+      </el-form-item>
+      <el-form-item label="开启检测" v-if="form.isCamOn">
         <el-switch v-model="form.isDetecting"></el-switch>
       </el-form-item>
-      <el-form-item label="录制">
+      <el-form-item label="录制"  v-if="form.isCamOn">
         <el-switch v-model="form.isRecording"></el-switch>
       </el-form-item>
-      <el-form-item label="" size="small" v-if="form.isRecording">
+      <el-form-item label="" size="small" v-if="form.isRecording && form.isCamOn">
         <!-- <div class="block"> -->
         <span class="demonstration">视频时长(min)</span>
         <el-slider
@@ -28,17 +31,6 @@
         ></el-slider>
         <!-- </div> -->
       </el-form-item>
-      <el-form-item label="过滤度">
-        <el-slider
-          v-model="form.filter"
-          :min="0"
-          :max="1"
-          :step="0.01"
-          show-input
-          :show-input-controls="false"
-          input-size="mini"
-        ></el-slider>
-      </el-form-item>
     </el-form>
   </div>
 </template>
@@ -48,6 +40,7 @@ export default {
   data() {
     return {
       form: {
+        isCamOn: false,
         isRecording: true,
         isDetecting: true,
         duration: 15,
@@ -68,9 +61,15 @@ export default {
     };
   },
   methods: {
+    camOnChange() {
+      this.$emit("CamOnChange", this.form.isCamOn);
+    },
     floatFormater(val) {
       return val / 100;
     },
+  },
+  mounted() {},
+  updated() {
   },
 };
 </script>
