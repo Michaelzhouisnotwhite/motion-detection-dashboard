@@ -33,7 +33,7 @@ export default {
 
 <style lang="less" scoped>
 .el-header {
-  background-color: #fdfdfd;
+  background-color: #f9f9f9;
   color: #181818;
   line-height: 60px;
   padding: 0;
@@ -49,7 +49,7 @@ export default {
   height: 100vh;
 }
 .main {
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   // color: #fafafa;
 }
 </style>

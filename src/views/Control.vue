@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background: #ffffff; padding: 20px">
     <div>
       <h2>报警设置</h2>
       <el-form

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background: #ffffff; padding: 20px; margin: 20px 0">
     <h2>基础设置</h2>
     <el-form
       ref="form"
@@ -8,16 +8,20 @@
       size="small"
       label-position="left"
     >
-      <el-form-item label="开启摄像头" >
+      <el-form-item label="开启摄像头">
         <el-switch v-model="form.isCamOn" @change="camOnChange"></el-switch>
       </el-form-item>
       <el-form-item label="开启检测" v-if="form.isCamOn">
         <el-switch v-model="form.isDetecting"></el-switch>
       </el-form-item>
-      <el-form-item label="录制"  v-if="form.isCamOn">
+      <el-form-item label="录制" v-if="form.isCamOn">
         <el-switch v-model="form.isRecording"></el-switch>
       </el-form-item>
-      <el-form-item label="" size="small" v-if="form.isRecording && form.isCamOn">
+      <el-form-item
+        label=""
+        size="small"
+        v-if="form.isRecording && form.isCamOn"
+      >
         <!-- <div class="block"> -->
         <span class="demonstration">视频时长(min)</span>
         <el-slider
@@ -69,8 +73,7 @@ export default {
     },
   },
   mounted() {},
-  updated() {
-  },
+  updated() {},
 };
 </script>
 

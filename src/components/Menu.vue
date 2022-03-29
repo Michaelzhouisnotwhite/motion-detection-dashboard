@@ -7,7 +7,7 @@
     :collapse="isCollapse"
     text-color="#fff"
     active-text-color="#ffd04b"
-    background-color="#212735"
+    background-color="#454d7e"
     router
   >
     <div
@@ -79,10 +79,10 @@ export default {
   text-align: center;
   cursor: pointer;
   font-size: 24px;
-  background-color: #31394c;
+  background-color: #454d7e;
   font-weight: normal;
 
-  border-color: #40485f;
+  border-color: #454d7e;
   // border-width: 2px;
   // border-style: solid;
   // border-top: none;

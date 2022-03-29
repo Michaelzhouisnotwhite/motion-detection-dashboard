@@ -6,6 +6,7 @@
       <el-breadcrumb-item>活动列表</el-breadcrumb-item>
       <el-breadcrumb-item>活动详情</el-breadcrumb-item>
     </el-breadcrumb> -->
+    <div style="padding: 0 20px">{{ $store.state.routerName }}</div>
     <div class="self-info">
       <el-avatar size="medium" shape="circle" src="#" @error="errorHandler">
         <img alt="头像" src="@/assets/unLoadedAvatar.png" />
@@ -29,6 +30,7 @@ export default {
 .header {
   // margin-right: 12px;
   text-align: right;
+  display: flex;
   // justify-content: center; /*水平居中*/
   // align-items: center; /*垂直居中*/
   cursor: pointer;

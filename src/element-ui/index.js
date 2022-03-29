@@ -14,12 +14,14 @@ import {Option} from 'element-ui'
 import {Slider} from "element-ui";
 import {Popconfirm} from "element-ui";
 import {Breadcrumb, BreadcrumbItem} from "element-ui";
+import {Image} from "element-ui";
 
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
 
 import Vue from 'vue'
 
 // Vue.use(Message)
+Vue.use(Image)
 Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(Table)

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 70%; margin: 0 auto">
     <!-- <video-player
       autoplay
       class="video-player-box"
@@ -32,6 +32,8 @@
     >
       <source :src="player.src" type="video/mp4" />
     </video>
+
+    <abnormal-result></abnormal-result>
     <cam-setting @CamOnChange="CamOnChange"></cam-setting>
     <my-control></my-control>
   </div>
@@ -40,16 +42,19 @@
 <script>
 import Control from "./Control.vue";
 import CamSetting from "@/components/Settings/CamSetting.vue";
+import AbnormalResult from "@/components/AbnormalResult.vue";
 export default {
   name: "MyHome",
   components: {
     MyControl: Control,
     CamSetting,
+    AbnormalResult,
   },
   data() {
     return {
       player: {
-        src: "http://127.0.0.1:8000/v/test_video.mp4",
+        // src: "http://127.0.0.1:8000/v/test_video.mp4",
+        src: "https://www.runoob.com/try/demo_source/mov_bbb.mp4",
         isCamOn: false,
       },
     };
