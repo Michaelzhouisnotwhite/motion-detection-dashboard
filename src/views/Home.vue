@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 70%; margin: 0 auto">
+  <div style="width: 80%; margin: 0 auto">
     <!-- <video-player
       autoplay
       class="video-player-box"
@@ -21,7 +21,7 @@
       @canplaythrough="onPlayerCanplaythrough($event)" -->
     <!-- </video-player> -->
     <!-- <video :src="playerOptions.sources[0].src" type="video/mp4"/> -->
-    <video
+    <!-- <video
       controls
       autoplay
       max-width="700"
@@ -31,8 +31,10 @@
       v-if="player.isCamOn"
     >
       <source :src="player.src" type="video/mp4" />
-    </video>
-
+    </video> -->
+    <div class="video-background">
+      <img :src="player.src" alt="" class="video-box" v-if="player.isCamOn" />
+    </div>
     <abnormal-result></abnormal-result>
     <cam-setting @CamOnChange="CamOnChange"></cam-setting>
     <my-control></my-control>
@@ -53,8 +55,8 @@ export default {
   data() {
     return {
       player: {
-        // src: "http://127.0.0.1:8000/v/test_video.mp4",
-        src: "https://www.runoob.com/try/demo_source/mov_bbb.mp4",
+        src: "http://127.0.0.1:8187/display",
+        // src: "https://www.runoob.com/try/demo_source/mov_bbb.mp4",
         isCamOn: false,
       },
     };
@@ -62,13 +64,21 @@ export default {
   methods: {
     CamOnChange(val) {
       this.player.isCamOn = val;
+      }
     },
-  },
+  
 };
 </script>
 
 <style lang="less" scoped>
 .video-box {
   background: black;
+  text-align: center;
+  margin: 0 auto;
+  max-height: 500px;
+}
+.video-background {
+  background: black;
+  text-align: center;
 }
 </style>

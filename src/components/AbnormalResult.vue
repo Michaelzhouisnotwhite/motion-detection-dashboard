@@ -9,14 +9,14 @@
       "
     >
       <h2>摄像头信息</h2>
-      <el-card class="box-card">
-        <div style="display: flex; flex-wrap: wrap">
-          <div class="text item">温度：<br />45C</div>
-          <div class="text item">cpu: <br />45%</div>
-          <div class="text item">gpu: <br />100%</div>
-          <div class="text item">mem：<br />70%</div>
-        </div>
-      </el-card>
+      <!-- <el-card class="box-card"> -->
+      <div style="display: flex; flex-wrap: wrap">
+        <div class="text item">温度：<br />45C</div>
+        <div class="text item">cpu: <br />45%</div>
+        <div class="text item">gpu: <br />100%</div>
+        <div class="text item">mem：<br />70%</div>
+      </div>
+      <!-- </el-card> -->
     </div>
     <div
       style="
@@ -37,8 +37,17 @@
 export default {
   data() {
     return {
-      url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+      seed:0.1,
+      url: "https://127.0.0.1:8187/catched",
     };
+  },
+  methods: {
+    pollData(){
+      this.polling = setInterval(()=>{
+        // get your datat here
+        this.$forceUpdate()
+      }, 1000)
+    }
   },
 };
 </script>

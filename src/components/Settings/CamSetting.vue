@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 <template>
   <div style="background: #ffffff; padding: 20px; margin: 20px 0">
     <h2>基础设置</h2>
@@ -43,12 +44,13 @@
 export default {
   data() {
     return {
+      seed:0.1,
       form: {
         isCamOn: false,
         isRecording: true,
         isDetecting: true,
         duration: 15,
-        filter: 0.5,
+        
       },
       marks: {
         5: "5 min",
@@ -65,15 +67,34 @@ export default {
     };
   },
   methods: {
+    freshPic() {
+      
+    },
     camOnChange() {
       this.$emit("CamOnChange", this.form.isCamOn);
     },
     floatFormater(val) {
       return val / 100;
     },
+    async sendCamSettings(val) {
+      try {
+        const { data, status } = await this.$http.post("/dis-settings", val);
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
   mounted() {},
   updated() {},
+  watch: {
+    form: {
+      handler(newValue, oldValue) {
+        // console.log(newValue);
+        this.sendCamSettings(newValue);
+      },
+      deep: true,
+    },
+  },
 };
 </script>
 

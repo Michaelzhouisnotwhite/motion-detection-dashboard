@@ -56,7 +56,7 @@ export default {
       form: {
         isAlarm: true,
         isDetecting: true,
-        duration: 15,
+        duration: 5,
         filter: 0.5,
         isWarningViaMessage: true,
         isWarningViaTel: false,
@@ -74,6 +74,25 @@ export default {
         },
       },
     };
+  },
+  methods: {
+    postData() {
+      try {
+        this.$http.post("/warning-settings", this.form);
+      } catch (error) {}
+    },
+  },
+  watch: {
+    "form.filter": {
+      handler(newValue, oldValue) {
+        this.postData();
+      },
+    },
+  },
+  created() {
+    this.$nextTick(() => {
+      this.postData();
+    });
   },
 };
 </script>

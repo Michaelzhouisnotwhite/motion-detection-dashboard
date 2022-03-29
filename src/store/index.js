@@ -9,7 +9,7 @@ export default new Vuex.Store({
     },
     mutations: {
         setRouteName(state, name) {
-            console.log(arguments)
+            // console.log(arguments)
             state.routerName = name
         },
     }

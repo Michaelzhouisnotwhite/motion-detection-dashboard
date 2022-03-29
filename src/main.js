@@ -17,7 +17,7 @@ Vue.use(VueVideoPlayer)
 Vue.config.productionTip = false
 
 Vue.prototype.$http = axios
-
+// Vue.forceUpdate()
 new Vue({
   router,
   store,
