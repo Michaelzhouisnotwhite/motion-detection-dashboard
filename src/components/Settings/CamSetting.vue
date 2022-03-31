@@ -48,7 +48,7 @@ export default {
       form: {
         isCamOn: false,
         isRecording: true,
-        isDetecting: true,
+        isDetecting: false,
         duration: 15,
         
       },
@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     freshPic() {
-      
+
     },
     camOnChange() {
       this.$emit("CamOnChange", this.form.isCamOn);

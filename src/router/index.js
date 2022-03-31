@@ -11,7 +11,7 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     { path: '/', redirect: '/home' },
-    { path: '/home', component: Home, meta: { name: '监控信息' } },
+    { path: '/home', component: Home, meta: { name: 'RLA监控信息' } },
     { path: '/test', component: Test },
     // eslint-disable-next-line no-undef
     { path: '/settings', component: Settings, meta: { name: '设置' } },

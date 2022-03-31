@@ -25,10 +25,10 @@
       <i class="el-icon-data-line"></i>
       <span slot="title">监控信息</span>
     </el-menu-item>
-    <el-menu-item index="control">
+    <!-- <el-menu-item index="control">
       <i class="el-icon-menu"></i>
       <span slot="title">摄像头控制</span>
-    </el-menu-item>
+    </el-menu-item> -->
     <!-- <el-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
         <span slot="title">导航三</span>

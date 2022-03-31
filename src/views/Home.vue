@@ -35,7 +35,7 @@
     <div class="video-background">
       <img :src="player.src" alt="" class="video-box" v-if="player.isCamOn" />
     </div>
-    <abnormal-result></abnormal-result>
+    <abnormal-result :isCamOn="player.isCamOn"></abnormal-result>
     <cam-setting @CamOnChange="CamOnChange"></cam-setting>
     <my-control></my-control>
   </div>
@@ -76,6 +76,7 @@ export default {
   text-align: center;
   margin: 0 auto;
   max-height: 500px;
+  max-width: 70%;
 }
 .video-background {
   background: black;

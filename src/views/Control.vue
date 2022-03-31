@@ -57,7 +57,7 @@ export default {
         isAlarm: true,
         isDetecting: true,
         duration: 5,
-        filter: 0.5,
+        filter: 0.8,
         isWarningViaMessage: true,
         isWarningViaTel: false,
       },

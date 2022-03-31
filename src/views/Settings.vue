@@ -1,7 +1,7 @@
 <template>
   <div>
     <video-table></video-table>
-    <cam-setting></cam-setting>
+    <!-- <cam-setting></cam-setting> -->
   </div>
 </template>
 

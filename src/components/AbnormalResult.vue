@@ -28,7 +28,12 @@
         align-items: center;
       "
     >
-      <el-image style="width: 100%" :src="url" fit="scale-down"></el-image>
+      <el-image
+        style="width: 100%"
+        class="c-img"
+        :src="url"
+        fit="scale-down"
+      ></el-image>
     </div>
   </div>
 </template>
@@ -37,17 +42,37 @@
 export default {
   data() {
     return {
-      seed:0.1,
-      url: "https://127.0.0.1:8187/catched",
+      seed: 0.1,
+      imgUrl: "",
+      url: "http://127.0.0.1:8187/catched",
     };
   },
+  props: {
+    isCamOn: {
+      type: Boolean,
+      default: false,
+    },
+  },
   methods: {
-    pollData(){
-      this.polling = setInterval(()=>{
+    getImg() {
+      // 需要刷新的固定图片地址
+      this.url = "http://127.0.0.1:8187/catched";
+      // 每次刷新添加上随机数
+      this.url = this.url + "?" + Math.random();
+      // console.log(this.imgUrl);
+    },
+    pollData() {
+      this.polling = setInterval(() => {
         // get your datat here
-        this.$forceUpdate()
-      }, 1000)
-    }
+        // this.$forceUpdate();
+        if (this.isCamOn) {
+          this.getImg();
+        }
+      }, 1000);
+    },
+  },
+  created() {
+    this.pollData();
   },
 };
 </script>
