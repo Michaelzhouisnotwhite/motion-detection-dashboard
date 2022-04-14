@@ -15,6 +15,9 @@ export default {
       deep: true,
     },
   },
+  methods: {
+   
+  },
 };
 </script>
 

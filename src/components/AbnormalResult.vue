@@ -31,8 +31,9 @@
       <el-image
         style="width: 100%"
         class="c-img"
-        :src="url"
+        :src="imgUrl"
         fit="scale-down"
+        @dblclick="imgDbClick"
       ></el-image>
     </div>
   </div>
@@ -42,9 +43,7 @@
 export default {
   data() {
     return {
-      seed: 0.1,
-      imgUrl: "",
-      url: "http://127.0.0.1:8187/catched",
+      imgUrl: "http://127.0.0.1:8187/caught",
     };
   },
   props: {
@@ -54,25 +53,16 @@ export default {
     },
   },
   methods: {
-    getImg() {
-      // 需要刷新的固定图片地址
-      this.url = "http://127.0.0.1:8187/catched";
-      // 每次刷新添加上随机数
-      this.url = this.url + "?" + Math.random();
-      // console.log(this.imgUrl);
+    imgDbClick() {
+      this.$http
+        .post("/clear_cache")
+        .catch((err) => {
+          console.log(err);
+        })
+        .then((res) => {
+          console.log(res);
+        });
     },
-    pollData() {
-      this.polling = setInterval(() => {
-        // get your datat here
-        // this.$forceUpdate();
-        if (this.isCamOn) {
-          this.getImg();
-        }
-      }, 1000);
-    },
-  },
-  created() {
-    this.pollData();
   },
 };
 </script>
@@ -80,5 +70,8 @@ export default {
 <style lang="less" scoped>
 .item {
   width: 48%;
+}
+.c-img:hover {
+  cursor: hand;
 }
 </style>

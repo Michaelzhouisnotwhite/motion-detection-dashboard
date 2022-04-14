@@ -26,7 +26,7 @@
         <!-- <div class="block"> -->
         <span class="demonstration">视频时长(min)</span>
         <el-slider
-          v-model="form.duration"
+          v-model="form.video_duration"
           :min="5"
           :max="60"
           :marks="marks"
@@ -44,13 +44,11 @@
 export default {
   data() {
     return {
-      seed:0.1,
       form: {
         isCamOn: false,
         isRecording: true,
         isDetecting: false,
-        duration: 15,
-        
+        video_duration: 15,
       },
       marks: {
         5: "5 min",
@@ -67,13 +65,21 @@ export default {
     };
   },
   methods: {
-    freshPic() {
-
+    freshPic() {},
+    async recoverSettings() {
+      try {
+        const { data, status } = await this.$http.get("/recover_settings");
+        console.log(data, status);
+        this.form.isCamOn = data.isCamOn;
+        this.form.isDetecting = data.isDetecting ;
+      } catch (err) {
+        console.log(err);
+      }
     },
     camOnChange() {
       this.$emit("CamOnChange", this.form.isCamOn);
     },
-    floatFormater(val) {
+    floatFormatter(val) {
       return val / 100;
     },
     async sendCamSettings(val) {
@@ -83,6 +89,11 @@ export default {
         console.log(error);
       }
     },
+  },
+  created() {
+    // await this.$nextTick();
+    this.recoverSettings();
+    this.$nextTick(()=>{this.camOnChange()})
   },
   mounted() {},
   updated() {},
@@ -103,8 +114,10 @@ export default {
   margin-top: 12px;
   margin-left: 24px;
 }
+
 .el-slider {
   width: 500px;
+
   .el-input-number--mini {
     width: 50px;
   }

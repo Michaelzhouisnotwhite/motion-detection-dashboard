@@ -1,4 +1,4 @@
-export default {
+model.export = {
     'env': {
         'browser': true,
         'es2021': true
@@ -31,10 +31,10 @@ export default {
             'off',
             'never'
         ],
-        'no-unused-vars':[
+        'no-unused-vars': [
             'off'
         ],
-        "no-empty":[
+        "no-empty": [
             'off'
         ]
     }

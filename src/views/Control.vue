@@ -35,7 +35,7 @@
         <el-form-item label="检测敏感度">
           <el-slider
             v-model="form.filter"
-            :min="0"
+            :min="0.01"
             :max="1"
             :step="0.01"
             show-input
@@ -55,7 +55,6 @@ export default {
     return {
       form: {
         isAlarm: true,
-        isDetecting: true,
         duration: 5,
         filter: 0.8,
         isWarningViaMessage: true,
@@ -79,20 +78,31 @@ export default {
     postData() {
       try {
         this.$http.post("/warning-settings", this.form);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async recoverForm() {
+      const { data, status } = await this.$http.get("/recover_settings");
+      console.log(data, status);
+      this.form.duration = data.duration;
+      this.form.filter = data.filter;
     },
   },
   watch: {
-    "form.filter": {
+    form: {
       handler(newValue, oldValue) {
         this.postData();
       },
+      deep: true,
     },
   },
   created() {
-    this.$nextTick(() => {
-      this.postData();
-    });
+    this.recoverForm();
+    // this.$nextTick(() => {
+    //   this.postData();
+    // });
   },
 };
 </script>

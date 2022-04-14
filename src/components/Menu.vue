@@ -1,20 +1,20 @@
 <template>
   <el-menu
-    default-active="home"
-    class="el-menu-vertical-demo"
-    @open="handleOpen"
-    @close="handleClose"
-    :collapse="isCollapse"
-    text-color="#fff"
-    active-text-color="#ffd04b"
-    background-color="#454d7e"
-    router
+      default-active="home"
+      class="el-menu-vertical-demo"
+      @open="handleOpen"
+      @close="handleClose"
+      :collapse="isCollapse"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+      background-color="#454d7e"
+      router
   >
     <div
-      @click="toggleCollapse"
-      class="toggle-button"
-      @mouseover="isTextShow = true"
-      @mouseleave="isTextShow = false"
+        @click="toggleCollapse"
+        class="toggle-button"
+        @mouseover="isTextShow = true"
+        @mouseleave="isTextShow = false"
     >
       <!-- <i class="text" v-if="isTextShow">
           {{ isCollapse ? "展开" : "收起" }}
@@ -73,6 +73,7 @@ export default {
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
 }
+
 .toggle-button {
   line-height: 60px;
   color: #fff;
@@ -93,14 +94,17 @@ export default {
     opacity: 0.5;
   }
 }
+
 .toggle-button:hover {
   background-color: #2c3447;
 }
+
 .el-menu {
   border-right: solid;
   height: 100%;
   border-color: #40485f;
 }
+
 // .mainHeight {
 //   height: 100%;
 //   width: auto;
